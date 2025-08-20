@@ -1,0 +1,8 @@
+skills:
+  programming_languages: [python, java, javascript, typescript, go, c++, c#, rust, scala, r, sql]
+  data_engineering: [airflow, spark, hadoop, hive, kafka, dbt, snowflake, redshift, bigquery]
+  ml_ai: [machine learning, deep learning, pytorch, tensorflow, scikit-learn, xgboost, nlp, computer vision, llm, langchain, rag, vector database, faiss, weaviate, milvus]
+  web: [react, vue, angular, node, express, next.js, nestjs, django, flask, fastapi]
+  cloud_devops: [docker, kubernetes, aws, azure, gcp, terraform, ansible, linux, git, ci/cd]
+  databases: [postgresql, mysql, mongodb, redis, elasticsearch, neo4j, cassandra]
+  analytics: [pandas, numpy, matplotlib, power bi, tableau, looker]
