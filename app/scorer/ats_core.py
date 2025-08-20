@@ -116,13 +116,13 @@ def compute_score(job_title:str, jd_text:str, resume_path:str, skills_path:str, 
     if use_llm:
         try:
             from transformers import pipeline
-            prompt = f\"\"\"You are an ATS assistant. Summarize strengths and gaps in 4-6 bullets.
+            prompt = f"""You are an ATS assistant. Summarize strengths and gaps in 4-6 bullets.
 Job Title: {job_title}
 JD: {jd_text[:2000]}
 Resume: {resume_text[:2000]}
 Matched skills: {", ".join(matched[:30])}
 Scores: {breakdown.total()} total
-\"\"\"
+"""
             gen = pipeline("text2text-generation", model=llm_model_name, max_new_tokens=220)
             notes = gen(prompt)[0]["generated_text"].strip()
         except Exception as e:
