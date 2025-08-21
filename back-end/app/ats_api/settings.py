@@ -18,11 +18,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "scorer",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",   # 👈 should be here
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -80,3 +82,7 @@ REST_FRAMEWORK = {
 ATS_WEIGHTS = {"semantic": 40.0, "skills": 30.0, "experience": 10.0, "title": 10.0, "hygiene": 10.0}
 ATS_ENABLE_LLM = os.environ.get("ATS_ENABLE_LLM", "0") == "1"
 ATS_LLM_MODEL = os.environ.get("ATS_LLM_MODEL", "google/flan-t5-small")
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
